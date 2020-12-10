@@ -1,8 +1,16 @@
 Red    = (255, 0, 0)
+Red
 Green  = (0, 128, 0)
+Green
 Blue   = (0, 0, 255)
+Blue
 Black  = (0, 0, 0)
+Black
 White  = (255, 255, 255)
+White
 Yellow = (255, 255, 0)
+Yellow
 Grey   = (128, 128, 128)
+Grey
 Purple = (128, 0, 128)
+Purple
