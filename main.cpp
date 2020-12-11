@@ -271,19 +271,44 @@ do{
           count = 100;
         }
         else if(finalColor == "Red"){
-          count += 1;
+          if(responseColor == "red"){
+            count += 0;
+          }
+          else{
+            count += 1;
+          }
         }
         else if(finalColor == "Blue"){
-          count += 5;
+          if(responseColor == "blue"){
+            count += 0;
+          }
+          else{
+            count += 5;
+          }
         }
         else if(finalColor == "Orange"){
-          count += 4;
+          if(responseColor == "orange"){
+            count += 0;
+          }
+          else{
+            count += 4;
+          }
         }
         else if(finalColor == "Purple"){
-          count += 6;
+          if(responseColor == "purple"){
+            count += 0;
+          }
+          else{
+            count += 6;
+          }
         }
         else if(finalColor == "Green"){
-          count += 3;
+          if(responseColor == "green"){
+            count += 0;
+          }
+          else{
+            count += 3;
+          }
         }
         }
         }
@@ -310,6 +335,8 @@ do{
     switch(count){
       case 0:cout << "You could have " + colorBlind[0] + "vision" << endl;
                       u.addBlindness(colorBlind[0]);result = true;break;
+      case 5:cout << "You could have " + colorBlind[0] + "vision" << endl;
+                      u.addBlindness(colorBlind[0]);result = true;break;      
       case 1:cout << "You could have " + colorBlind[1] << endl;
                       u.addBlindness(colorBlind[1]);result = true;break;
       case 4:cout << "You could have " + colorBlind[3] << endl; 

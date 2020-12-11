@@ -1,11 +1,11 @@
 Are You ColorBlind?
 ## Description
 V.01
-Our program will be capable of detecting Color-blindness by flashing a circle on the screen. The circle will include two colors. One of the colors will be in the shape of a number, then it will prompt the user to tell us what number is on the screen, with the answers given I will be able to determine if the user could be Color-blind, and if they are I will inform them what form of Color-blind they are.
+Our program will be capable of detecting color-blindness by flashing different colored numbers within a colored circle on the screen. The user will be prompted to tell us what number they see on the screen. With the answers given, the program will be able to determine if the user could be Color-blind, and if they are, they will be informed what type of Color-blindness they have.
 V.02 Updates
-In this update, I included a circular object in the terminal, with two colors. I also added a random RGB generator, and utilizing that I patched it through a function called findColors(), this function examines the file called "color.txt and looks for a color matching the RGB code.
+In this update, I included a circular object in the terminal, with two colors. I also added a random RGB generator, and utilizing that I patched it through a function called “findColors().” This function examines the file called "color.txt” and looks for a color matching the RGB code.
 V.1.0 Updates
-In this update, I included the class titled User, which stores the user’s data. The program then uses the name to search for the user's file, and if the user has data in the file, it tells the user their previous result. I also added the scoring system which would tell the program which case to give out in the switch statement at the end of the program.
+In this update, I included the class titled “User,” which stores the user’s data. The program then uses the name to search for the user's file. If the user has data in the file, it tells the user their previous result. I also added a scoring system which would tell the program which case to give out in the switch statement at the end of the program.
 ## Developer
 Alexander Baron
 ## Example
@@ -32,8 +32,9 @@ Would you like to take the test again y/n
 ## C++ Guide
 ### Variables and Data Types
  
-There is a string called responses, which will hold the user’s response to the questions. There is a char called choice, which will determine if you want to take the test again or not. The string name is a private string in the class, user, the string stores the user’s name. The string contents is also a private string in the user class, the string contains the information from the users file The string finalColor is used to store the color inherited from findColor(). There is also an Int called I, which gets its number by finding the remainder of rand/8. It is used as the index of the array num. I have a string called color which is used in findColor to store the lines in color.txt. Int number is a variable I used as storage to tell the computer which number is in the circle. Int count is an int that I used to count the points given if the answer is wrong, the int would later be used in the switch statement to determine what color-blind type the user could have. I have multiple bool statements that tell the program if the color circle has been used or not, the bool title used determines if a do-while loop continues or stops. If the if statement that decides the color circle has been used, the bool used will become true. The int questions are used to set the number of questions asked in the survey, it is then used in a do-while loop.
+There is a string called “responses,” which will hold the user’s response to the questions. There is a char called “choice,” which will determine if you want to take the test again or not. The string ‘name’ is a private string in the class “user.” The string stores the user’s name. The string “contents” is also a private string in the user class, containing the information from the user’s file. The string “finalColor” is used to store the color inherited from findColor(). There is also an Int called “I”, which gets its number by finding the remainder of rand/8. It is used as the index of the vector “rgb. I have a string called “color” which is used in findColor to store the lines in color.txt. Int “number” is a variable I used as storage to tell the computer which number is in the circle. Int “count” is an int that I used to count the points given if the answer is wrong. This int would later be used in the switch statement to determine what color-blind type the user could have. I have multiple bool statements that tell the program if the color circle has been used or not.  The bool title “used” determines if a do-while loop continues or stops. If the if statement that decides the color circle has been used, the bool “used” will become true. The int “questions” is used to set the number of questions asked in the survey. It is then used in a do-while loop.
  
+Variables
 int i,number,count,Questions;
 string Responses,finalColor,color,name, contents;
 char choice;
@@ -42,7 +43,7 @@ gused = false,wused = true,pused = false,
 grused = true,yused = false,used = false,result = false;
  
 ### Input and Output
-I will have the user input the color of the number they see, and the number in the color circle When the questions are done I will give them their result.
+I will have the user input the number they see in the circle, followed by the color of the number. When the questions are completed, I will give them their result.
  
 Cout << "What color is the number" << endl;
 Cin >> responseColor
@@ -52,7 +53,7 @@ Cout << "Would you like to take the test again y/n" << endl;
 Cin >> choice;
  
 ### Decisions
-The decision is that if you would like to take the test again or not. You will answer with either a y or an n. I will be using a switch statement rather than using an if statement because it will go much faster. I also have an if-else statement which will be used to display the circle which contains the number. In these if statements there will printf() outputs the pattern :
+The decision is if the user would like to take the test again. The user will answer with either a “y” or an “n.” I will be using a switch statement rather than using an if statement because it will go much faster. I also have an if-else statement which will be used to display the circle which contains the number. In these if statements there will printf() outputs with the following pattern:
 ```
  @@@@@@
 @@@@@@@@
@@ -62,8 +63,8 @@ The decision is that if you would like to take the test again or not. You will a
 @@@@@@@@
  @@@@@@
 ```
-in two different colors, One of the colors will be in the shape of a number. There is also a statement that checks if the variable correct is true or not true, if the variable is true it then presents the user with the next question, and the next if statement, if the variable isn’t true, it goes through a list of if-else statements and determines the numerical value of the color circle in the question, and adds the value to the int count. if the first part of the question is true, but the second part of the question is false, it does the same as if the first part was false. I also have if-else statements in the functions correctColor, and correctNumb, both of these if-else statements work the same way, if the response is similar to the color, or the number, return true, else return false. And at the end of the program, the program checks to see if the switch statement received a result, if it did it prompts the user to take the test again, but if it didn’t get a result, the user is still prompted with the same prompt but this time with the program saying that it could not come up with a result.
- 
+As discussed, within the colored circle there is a number in a different color. There is also a statement that confirms the answer is correct. If the variable is true it then presents the user with the next question, and the next if statement. If the variable is false, it goes through a list of if-else statements and determines the numerical value of the color circle in the question, and adds the value to the int “count”. If the first part of the question is true, but the second part of the question is false, it does the same as if the first part was false. I also have if-else statements in the functions “correctColor,” and “correctNumb,” both of these if-else statements work the same way. If the response matches the color and the number, it returns true. At the end of the program, the program checks to see if the switch statement received a result. Based on the result, the user is prompted with the option to take the test again.
+
 if(correct == false){
 if(responseColor == "Grey" || responseColor == "White"){
   count = 100;
@@ -109,7 +110,7 @@ cout << "Would you like to take the test again y/n" << endl;
 }
  
 ### Iteration
-There is a for loop in the function called findColor(), which uses the int li, and does it until li equals the size of the vector. The li is used as the index for the vector and compares the object in that certain index to the RGB code gained from Random RGB. A do-while loop will go on if the user would like to take the test again. I also have an if statement in findColor() which checks if the current index contains the  RGB code. There is also a while loop which adds every line in color.txt to the vector "text". How it works is by checking if there are any more lines in the text file, and if there are it adds to the vector, and then checks the next line. If there is no line next the loop stops. Then I have a loop that determines if the file I opened is open if it isn’t, it displays the message
+There is a for loop in the function called “findColor(),” which uses the int li, and does it until li equals the size of the vector. The li is used as the index for the vector and compares the object in that certain index to the RGB code gained from Random RGB. A do-while loop will go on if the user would like to take the test again. I also have an if statement in findColor() which checks if the current index contains the  RGB code. There is also a while loop which adds every line in color.txt to the vector "text". How it works is by checking if there are any more lines in the text file, and if there are it adds to the vector, and then checks the next line. If there is no line next the loop stops. Then I have a loop that determines if the file I opened is open if it isn’t, it displays the message
 ```
 cannot open file
 ```
@@ -123,7 +124,7 @@ do{
 }while(used == false);
  
 ### File Input and Output
-I will be using a file called color.txt that stores all the colors and their RGB codes. I will be calling this file later, 1: To add all of the lines individually to the vector called text 2: to compare the RGB code inherited from the function radnomRGB. I created a system, in the user class, which checks if the user has a previous file, and if they do not it creates a new one. In the user’s file, it contains the user’s color-blind results from the previous test. I have a fstream reader called read in the user class, and an ifstream reader titled reader in the function findColor.
+I will be using a file called color.txt that stores all the colors and their RGB codes. I will be calling this file later, 1: To add all of the lines individually to the vector called text, and 2: to compare the RGB code inherited from the function radnomRGB. I created a system, in the user class, which checks if the user has a previous file, and if they do not it creates a new one. In the user’s file, it contains the user’s color-blind results from the previous test. I have a fstream reader called read in the user class, and an ifstream reader titled reader in the function findColor.
  
 ### Arrays/Vectors
 I have a string vector called colors which adds every line in colors.txt to the vector and then uses the vector, later on, to compare the RGB to RGB codes in the file. I also have an array called colorBlind which stores all the types of color-blindness which will be used in a later update to tell the user what type of color-blindness. I also have a string array called RGB which stores all of the RGB codes.
@@ -133,6 +134,7 @@ string colorBlind[7] = ["Normal","Deuteranomaly","Protanomaly",                 
 ### Functions
 I have two functions called randomRGB(), and findColor() randomRGB Randomizes RGB codes and returns them, it achieves this by utilizing the rand() function to random a number between zero and eight. This is then put in the int called i, i uses the remainder of rand/8, which is placed in the index. It then calls the RGB code that is in the index of the array. The function has a int parameter called randSeed, it is employed to add time(0) in srand(time(0) + randSeed). When it is called in Int main, I randomize the number used for randSeed.Then findColor uses the RGB code found in randomRGB to acquire a color in color.txt that matches that of the RGB code. It does this by going through the vector colors, which contains all of the colors from the txt file. When it finds the line containing the code, it then places the line in the string color, and then I split the string color to only show the name of the color. It then returns the color. It has a string parameter called RGB which when used in main uses the function called from randomRGB. In version 1.0 I added six new functions, four of those being in the user class. The first two functions titled, correctNumb, and correctColor, both checked the user's response to make sure it matched the number and color contained in the color circle if it did the functions returned true, if not the function returns false. The functions had two parameters,
 correctNumb had the parameters of number, and response, while correctColor had the parameters of color, and response. both functions were bool functions, meaning they could only return the true or false values.
+
 Class Functions :
 The four functions in the user class were all void functions and were titled setName, findName, getColorBlind, and addBlindness. The first function setName had a string parameter titled n, the function used the string n, and set the private string name to the variable held in n. The next function, findName did not have a parameter, the function looks for the user's file, and if the function cannot find the file it creates a new one. getColorBlind searches through the user's file to return the type of color-blind the user may be. The final function addBlindness has a string parameter titled blindness, this function adds the results from the survey to the user's file.
  
